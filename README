@@ -1,0 +1,7 @@
+ConwayJS -- http://github.com/joeyrobert/ConwayJS
+Copyright (c) 2009 Joseph Robert. All rights reserved.
+
+The Game of Life is a cellular automaton devised by the British 
+mathematician John Horton Conway in 1970. My goal was to build 
+a simple and pretty implementation in JavaScript. Recommended 
+Browsers: Chrome 3+, Safari 4+, Firefox 3+, Opera 10+. 

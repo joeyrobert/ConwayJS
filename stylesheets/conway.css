@@ -1,0 +1,34 @@
+#conway {
+  width: 290px;
+  font-size: 14px;
+  float: left;
+}
+#conway table {
+  border: 1px dashed #666;
+  border-spacing: 0;
+}
+#conway table td {
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+#conway table td.on {
+  background-color: #000;
+}
+#conway table td.on:hover {
+  background-color: #666;
+}
+#conway table td:hover {
+  background-color: #CCC;
+}
+#conway #import {
+  width: 288px;
+  background-color: #FFF;
+  border: 1px solid #555;
+  font-size: 8px;
+}
+#conway #messages {
+  display: none;
+}
