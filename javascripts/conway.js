@@ -93,8 +93,9 @@ function runCycle() {
   var neighbors, id, oldGrid;
   oldGrid = grid.slice(0);
 
+  var id = 0;
   $("#conway table td").each(function() {
-    id = parseInt($(this).attr('id'), 10);
+    /* id = parseInt($(this).attr('id'), 10); */
     neighbors = numberOfNeighbors(id, oldGrid);
 
     if((neighbors < 2 || neighbors > 3) && oldGrid[id]) {
@@ -105,6 +106,7 @@ function runCycle() {
       $(this).addClass("on");
       grid[id] = true;
     }
+    id++;
   });
 }
 
