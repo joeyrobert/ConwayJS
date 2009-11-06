@@ -18,9 +18,7 @@ var xSize = 48;
 var ySize = 32;
 var gridSize = xSize*ySize;
 var grid = new Array(gridSize);
-var runInterval;
-var cycleCount = 0;
-var lastCycleTime = new Date().getTime();
+var runInterval, cycleCount, lastCycleTime;
 
 for(i = 0; i < gridSize; i++) {
   grid[i] = false;
@@ -121,6 +119,8 @@ function runCycle() {
 }
 
 function run() {
+  lastCycleTime = new Date().getTime();
+  cycleCount = 0;
   runInterval = setInterval(runCycle, 10);
 }
 
