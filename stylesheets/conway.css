@@ -32,3 +32,6 @@
 #conway #messages {
   display: none;
 }
+#conway #fps {
+  float: right;
+}

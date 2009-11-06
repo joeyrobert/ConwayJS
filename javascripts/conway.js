@@ -19,6 +19,8 @@ var ySize = 32;
 var gridSize = xSize*ySize;
 var grid = new Array(gridSize);
 var runInterval;
+var cycleCount = 0;
+var lastCycleTime = new Date().getTime();
 
 for(i = 0; i < gridSize; i++) {
   grid[i] = false;
@@ -49,6 +51,7 @@ function drawTable(x, y) {
 
   html += '</table>';
   html += '<div id="messages"></div>';
+  html += '<div id="fps">0 frames/second</div>';
   html += '<div>Import/Export</div>';
   html += '<textarea id="import"></textarea>';
   html += '<p><a href="#" onclick="run(); return false;">Run</a> | ';
@@ -107,10 +110,18 @@ function runCycle() {
     }
     id++;
   });
+  
+  cycleCount++;
+  
+  if(cycleCount % 100 == 0) {
+    var nextCycleTime = new Date().getTime();
+    $("#conway #fps").html(Math.round(100 * 1000 / (nextCycleTime - lastCycleTime)) + " frames/second");
+    lastCycleTime = nextCycleTime;
+  }
 }
 
 function run() {
-  runInterval = setInterval(runCycle, 50);
+  runInterval = setInterval(runCycle, 10);
 }
 
 function stop() {
